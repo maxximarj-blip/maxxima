@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfólio de Tadeu Ferreira: dados, BI e automação para Sales Ops e Finanças.">
+<title>Tadeu Ferreira Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: livro-razão — cabeçalho com linha conciliada, faixa de números, grade de projetos filtrável, método em 5 passos */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --ink:#0f1f3a; --muted:#56627a; --line:#d9e0ea;
+  --accent:#0f3460; --ok:#0f7a63; --ok-soft:#dff3ec; --warn:#a0560c; --warn-soft:#fbecd9;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1322; --surface:#121d31; --ink:#e7ecf4; --muted:#9aa7bd; --line:#24324b;
+  --accent:#8fb4ea; --ok:#4fd1ab; --ok-soft:#123a33; --warn:#f0a85a; --warn-soft:#3a2a17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1322; --surface:#121d31; --ink:#e7ecf4; --muted:#9aa7bd; --line:#24324b;
+  --accent:#8fb4ea; --ok:#4fd1ab; --ok-soft:#123a33; --warn:#f0a85a; --warn-soft:#3a2a17; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Hero */
+header{padding-block:56px 40px;border-bottom:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1}
+.hero .role{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.4vw,26px);color:var(--accent);margin-top:14px}
+.hero p.lede{max-width:56ch;color:var(--muted);margin-top:18px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{font-family:var(--f-mono);font-size:13px;padding:10px 14px;border-radius:6px;border:1px solid var(--line);color:var(--ink);text-decoration:none;background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+
+/* Ledger */
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;font-family:var(--f-mono);font-size:13px;box-shadow:0 12px 30px -18px rgba(15,31,58,.35)}
+.ledger .head{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:center;font-variant-numeric:tabular-nums}
+.row:last-child{border-bottom:0}
+.src{color:var(--muted)}
+.val{text-align:right}
+.chip{font-size:11px;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.ledger .foot{margin-top:10px;color:var(--muted);font-size:11px}
+@media (prefers-reduced-motion:no-preference){
+  .row .chip.ok{animation:stamp .5s ease-out both}
+  .row:nth-child(3) .chip{animation-delay:.25s}.row:nth-child(4) .chip{animation-delay:.5s}.row:nth-child(5) .chip{animation-delay:.75s}
+  @keyframes stamp{from{transform:scale(1.25)}to{transform:scale(1)}}
+}
+
+/* Números */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
+.fig{padding:26px 18px 26px 0}
+.fig+.fig{padding-left:18px;border-left:1px solid var(--line)}
+.fig b{display:block;font-family:var(--f-display);font-size:clamp(28px,4vw,40px);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.fig span{color:var(--muted);font-size:15px}
+
+section{padding-block:56px}
+section h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;margin-top:8px}
+.sec-lede{color:var(--muted);max-width:62ch;margin-top:10px}
+
+/* Filtros */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.filters button{font-family:var(--f-mono);font-size:13px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card .cat{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.card .client{font-size:14px;color:var(--muted);text-align:right}
+.card h3{font-size:22px;font-weight:700;line-height:1.2}
+.card p{margin:0;color:var(--muted)}
+.result{border-top:1px dashed var(--line);padding-top:12px;font-size:15.5px;color:var(--ink)}
+.result::before{content:"✓ ";color:var(--ok);font-weight:600}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.stack span{font-family:var(--f-mono);font-size:11.5px;padding:3px 7px;border-radius:4px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+
+/* Método */
+.steps{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:14px;border-top:2px solid var(--accent);min-width:0}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--accent)}
+.steps b{display:block;font-family:var(--f-display);font-size:19px;margin-top:4px}
+.steps span{color:var(--muted);font-size:15px}
+
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.tools div{min-width:0}
+.tools h3{font-size:16px;font-family:var(--f-mono);font-weight:600;letter-spacing:.04em;color:var(--accent);text-transform:uppercase}
+.tools p{color:var(--muted);margin:8px 0 0}
+
+footer{border-top:1px solid var(--line);padding-block:40px 56px}
+.contact{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:14px;font-family:var(--f-mono);font-size:14px}
+.contact span{user-select:all}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:32px}
+  .figures{grid-template-columns:repeat(2,1fr)}
+  .fig:nth-child(3){padding-left:0;border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .tools{grid-template-columns:1fr}
+}
+@media (max-width:440px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Portfólio · Rio de Janeiro</div>
+      <h1>Tadeu Ferreira</h1>
+      <div class="role">Dados, BI e automação para Sales Ops e Finanças</div>
+      <p class="lede">Pego a planilha que ninguém confia e transformo em sistema: conciliadores financeiros, DREs por canal, BIs e aplicações web com login. Atacado e varejo de calçados, e-commerce, marketplace, escola e food service.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="curriculo.pdf" target="_blank" rel="noopener">Currículo (PDF)</a>
+      </div>
+    </div>
+    <div class="ledger" aria-label="Exemplo de linha de conciliação">
+      <div class="head"><span>Conciliação · pedido #10482</span><span>Status</span></div>
+      <div class="row"><span class="src">Shopify · venda</span><span class="val">R$ 389,90</span><span class="chip ok">OK</span></div>
+      <div class="row"><span class="src">Pagar.me · 3x cartão</span><span class="val">R$ 389,90</span><span class="chip ok">OK</span></div>
+      <div class="row"><span class="src">MDR contratado 2,55%</span><span class="val">−R$ 9,94</span><span class="chip ok">OK</span></div>
+      <div class="row"><span class="src">Extrato · parcela 2/3 D+60</span><span class="val">R$ 126,65</span><span class="chip ok">Liquidado</span></div>
+      <div class="row"><span class="src">Extrato · parcela 3/3 D+90</span><span class="val">—</span><span class="chip warn">Previsto</span></div>
+      <div class="foot">Exemplo ilustrativo do tipo de conciliação que construo.</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap figures">
+  <div class="fig"><b>12+</b><span>sistemas e modelos entregues em produção</span></div>
+  <div class="fig"><b>5.197</b><span>vendas de marketplace conciliadas na carga inicial</span></div>
+  <div class="fig"><b>1.978</b><span>itens de NF-e extraídos e conferidos nota a nota</span></div>
+  <div class="fig"><b>4</b><span>marcas atendidas no mesmo modelo de DRE</span></div>
+</div>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="eyebrow">Projetos</div>
+    <h2>O que eu construí</h2>
+    <p class="sec-lede">Cada projeto saiu de uma dor real da operação. Todos foram conferidos contra os totais da fonte antes de ir para o usuário.</p>
+    <div class="filters" role="group" aria-label="Filtrar projetos">
+      <button id="f-all" data-f="all" aria-pressed="true">Todos</button>
+      <button id="f-conc" data-f="conc" aria-pressed="false">Conciliação</button>
+      <button id="f-ctrl" data-f="ctrl" aria-pressed="false">Controladoria</button>
+      <button id="f-bi" data-f="bi" aria-pressed="false">BI e automação</button>
+      <button id="f-sis" data-f="sis" aria-pressed="false">Sistemas</button>
+      <button id="f-dados" data-f="dados" aria-pressed="false">Dados</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Método</div>
+    <h2>Como eu trabalho</h2>
+    <ol class="steps">
+      <li><b>Diagnóstico</b><span>Leio a planilha e o processo atual e aponto onde os números não fecham.</span></li>
+      <li><b>Modelo de dados</b><span>Normalizo as fontes em tabelas com chave única e regras claras.</span></li>
+      <li><b>Automação</b><span>Fórmula viva, Apps Script, Python ou banco, no menor nível que resolve.</span></li>
+      <li><b>Publicação</b><span>Web app com login e permissões, testado com os dados reais.</span></li>
+      <li><b>Manual e treino</b><span>Documentação de uso e treinamento de quem vai operar.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Ferramentas</div>
+    <h2>Stack do dia a dia</h2>
+    <div class="tools">
+      <div><h3>Dados e automação</h3><p>Python (pandas, openpyxl, PyMuPDF, Playwright), Google Apps Script, Google Sheets avançado, Excel, Looker Studio.</p></div>
+      <div><h3>Sistemas web</h3><p>JavaScript, React + TypeScript, Chart.js, Supabase (Postgres, RLS), GitHub Pages e Actions.</p></div>
+      <div><h3>Negócio</h3><p>Bling, OMIE, Mercos, Shopify, Yampi, Pagar.me, Appmax, Rede, Mercado Livre. NF-e, ICMS/TTD, PIS/COFINS.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="eyebrow">Contato</div>
+    <h2 style="font-size:clamp(24px,3vw,32px);margin-top:8px">Tem uma planilha que não fecha?</h2>
+    <div class="contact"><span>[seu e-mail]</span><span>[seu telefone]</span><span>[seu LinkedIn]</span></div>
+  </div>
+</footer>
+
+<script>
+const P=[
+ {c:"conc",cat:"Conciliação",cl:"361° · e-commerce",t:"Conciliador de Recebíveis",p:"Cruza Shopify, Pagar.me, Appmax e extrato de liquidação. Agenda por parcela, auditoria de MDR, chargebacks e reembolso Clear Sale até R$ 700 por pedido.",r:"Site com login e aprovação de acesso por e-mail, comparativo entre adquirentes, manual e treinamento.",s:["HTML/JS","Apps Script","GitHub Pages"]},
+ {c:"conc",cat:"Conciliação",cl:"Everest · Mercado Livre",t:"Conciliador Mercado Livre",p:"Vendas × Extrato Mercado Livre × Extrato Mercado Pago, sempre calculado por venda e nunca por linha de relatório.",r:"5.197 vendas, 6.524 liberações e 6.968 lançamentos na carga inicial; manual de 14 páginas.",s:["Supabase","SQL","GitHub Pages"]},
+ {c:"ctrl",cat:"Controladoria",cl:"Klava · Flowfa, Ecko, Live",t:"DRE Operacional por canal",p:"Receita, impostos (ICMS/TTD, PIS/COFINS), taxas de gateway, 3PL, frete, mídia e CMV por SKU, tudo em fórmula viva.",r:"Online, Atacado, Ecko e Live no mesmo modelo, com visão com e sem a loja intercompany.",s:["Google Sheets","Premissas fiscais"]},
+ {c:"bi",cat:"BI e automação",cl:"Klava Brands",t:"Klava Financeiro",p:"Integra a API do Bling às contas a receber das três marcas, com esteira noturna, inadimplência e e-mails de cobrança.",r:"4,8 mil títulos processados em lotes paralelos dentro do limite de execução.",s:["Apps Script","Bling API v3","OAuth/JWT"]},
+ {c:"bi",cat:"BI e automação",cl:"Klava Brands",t:"BI Klava Comercial",p:"Vendas, faturamento, pré-venda e estoque de atacado e e-commerce em um painel único para a diretoria.",r:"Filtros por data de venda e faturamento e apresentação gerada em um clique.",s:["Apps Script","Chart.js"]},
+ {c:"sis",cat:"Sistemas",cl:"Klava Brands",t:"Intranet Klava",p:"Chat por canais e mensagens diretas, tarefas com recorrência e prazo no Google Calendar, chamadas Meet.",r:"Notificações por e-mail, dashboard de produtividade, PWA e três idiomas.",s:["Apps Script","Calendar","Meet"]},
+ {c:"sis",cat:"Sistemas",cl:"Klava · Private Label",t:"Controle de Private Label",p:"Clientes, fornecedores, projetos, pedidos, custos, pagamentos e documentos de operações no exterior.",r:"Base normalizada em 7 tabelas e 22 comprovantes SWIFT vinculados aos lançamentos.",s:["Apps Script","Google Drive"]},
+ {c:"sis",cat:"Sistemas",cl:"Top Burguer · hamburgueria",t:"Gestão da hamburgueria",p:"Comandas, fechamento de caixa, acerto de entregadores, recebíveis de maquininha e cadastros.",r:"3 perfis de acesso com auditoria; 1.735 pedidos históricos (R$ 93,5 mil) migrados e conferidos.",s:["React","TypeScript","Supabase RLS"]},
+ {c:"sis",cat:"Sistemas",cl:"Maple Bear Freguesia",t:"Portal de Rematrícula 2027",p:"Famílias preenchem dados e atividades extras; o registro cai numa planilha interna protegida.",r:"Portal público com envio seguro por token e comprovante para a família.",s:["HTML/JS","Apps Script"]},
+ {c:"ctrl",cat:"Controladoria",cl:"Maple Bear Freguesia",t:"Conciliação bancária e Forecast",p:"Classificação de extratos Itaú de duas contas e revisão do Forecast 2026 a partir dos extratos.",r:"Forecast V3 refeito, com 14 não-conformidades documentadas.",s:["HTML/JS","SheetJS","Excel"]},
+ {c:"dados",cat:"Dados",cl:"Klava · Ecko/Oneflip",t:"Pipeline de pedidos em PDF",p:"PDFs de pedidos viram planilhas por representante, ranking e controle de faturamento automático.",r:"Relatórios de 299 e 337 pedidos e ranking de 12 representantes.",s:["Python","pdftotext","openpyxl"]},
+ {c:"dados",cat:"Dados",cl:"Klava · fornecedores",t:"Extração de NF-e",p:"DANFEs de dois fornecedores viram uma base de itens conciliada nota a nota.",r:"51 notas e 1.978 itens; dois arquivos trocados no Drive identificados.",s:["Python","Google Drive"]},
+ {c:"dados",cat:"Dados",cl:"Klava · estoque",t:"Conciliação de estoque",p:"Explica a variação mensal do valor de estoque entre julho e setembro.",r:"Erro de custo em 211 SKUs corrigido; alta de agosto ajustada de R$ 308 mil para R$ 99 mil.",s:["Python","Excel"]},
+ {c:"ctrl",cat:"Controladoria",cl:"Q9 · Quadra 9",t:"Plano do primeiro drop",p:"Plano de negócio da camisaria da qual sou sócio: coleções, identidade e benchmark de custos.",r:"Custo de R$ 39,50 por peça no cenário base para 1.000 camisetas.",s:["Benchmark","BPO"]}
+];
+const g=document.getElementById('grid');
+const esc=s=>s.replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+function render(f){
+  g.innerHTML=P.filter(x=>f==='all'||x.c===f).map(x=>`<article class="card">
+    <div class="meta"><span class="cat">${esc(x.cat)}</span><span class="client">${esc(x.cl)}</span></div>
+    <h3>${esc(x.t)}</h3><p>${esc(x.p)}</p><div class="result">${esc(x.r)}</div>
+    <div class="stack">${x.s.map(s=>`<span>${esc(s)}</span>`).join('')}</div></article>`).join('');
+}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(o=>o.setAttribute('aria-pressed',o===b?'true':'false'));
+  render(b.dataset.f);
+}));
+render('all');
+</script>
+
+</body>
+</html>
