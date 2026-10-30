@@ -142,6 +142,62 @@ footer h2{font-size:clamp(26px,3.6vw,44px);margin-top:12px}
 .contact a:hover{border-color:var(--accent)}
 .copy{margin-top:40px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 
+/* ---------- Tela de exemplo (hover) ---------- */
+.card{min-height:420px}
+.peek{align-self:flex-start;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--glow);background:transparent;border:1px dashed rgba(63,169,255,.45);border-radius:999px;padding:6px 12px;cursor:pointer}
+.shot{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,#0b1428,#070d1a);border:1px solid var(--accent);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;opacity:0;visibility:hidden;transform:translateY(10px) scale(.98);transition:opacity .25s,transform .25s,visibility 0s .25s;box-shadow:0 0 40px -10px rgba(63,169,255,.6)}
+.card.open .shot{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
+@media (hover:hover){.card:hover .shot{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}}
+.win{display:flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.win i{width:7px;height:7px;border-radius:50%;background:#26354f}
+.win i:first-child{background:#ff5f57}.win i:nth-child(2){background:#febc2e}.win i:nth-child(3){background:#28c840}
+.win span{margin-left:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win button{margin-left:auto;background:none;border:0;color:var(--muted);font-size:16px;line-height:1;cursor:pointer;padding:0 2px}
+.sb{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;overflow:hidden;font-family:var(--f-mono);font-size:11px;color:var(--ink)}
+.fake{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+.mk{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.mk div{background:rgba(63,169,255,.06);border:1px solid var(--line);border-radius:6px;padding:7px 8px;min-width:0}
+.mk small{display:block;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mk b{font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.mt th{font-size:9.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:4px 4px;border-bottom:1px solid var(--line)}
+.mt td{padding:5px 4px;border-bottom:1px dashed var(--line);white-space:nowrap}
+.mt .r{text-align:right}
+.mt tr.tot td{border-top:1px solid var(--accent);color:var(--glow);font-weight:600}
+.c{font-size:9.5px;padding:1px 6px;border-radius:999px;border:1px solid}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:#ff6b7d}.mute{color:var(--muted)}
+.c.ok{background:var(--ok-soft);border-color:rgba(63,224,176,.3)}
+.c.warn{background:var(--warn-soft);border-color:rgba(255,179,92,.3)}
+.c.bad{background:rgba(255,107,125,.1);border-color:rgba(255,107,125,.35)}
+.c.mute{background:transparent;border-color:var(--line)}
+.mb{display:flex;flex-direction:column;gap:7px}
+.br{display:grid;grid-template-columns:88px 1fr 58px;gap:8px;align-items:center}
+.br span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.br i{height:10px;background:rgba(63,169,255,.08);border-radius:3px;position:relative;overflow:hidden}
+.br em{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--glow))}
+.br em.warn{background:var(--warn)}.br em.bad{background:#ff6b7d}.br em.ok{background:var(--ok)}
+.br b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.cc{flex:1;display:flex;align-items:flex-end;gap:5px;min-height:110px;border-bottom:1px solid var(--line);padding-top:6px}
+.cc div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.cc em{width:100%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--glow),var(--accent))}
+.cc span{font-size:9.5px;color:var(--muted)}
+.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1}
+.kb>div{background:rgba(63,169,255,.04);border:1px solid var(--line);border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.kb h4{margin:0;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.kb p{margin:0;background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:5px 6px;font-size:10.5px;line-height:1.35;color:var(--ink)}
+.kb p small{display:block;color:var(--muted);font-size:9.5px}
+.stp{display:flex;gap:4px}
+.stp span{flex:1;font-size:9.5px;text-align:center;padding:5px 2px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.stp span.d{color:var(--ok);border-color:rgba(63,224,176,.35)}
+.stp span.a{color:#02101f;background:var(--accent);border-color:var(--accent);font-weight:600}
+.fld{display:grid;grid-template-columns:86px 1fr;gap:6px 10px;align-items:center}
+.fld span{color:var(--muted)}
+.fld b{font-weight:500;background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:5px 7px;display:flex;gap:4px;flex-wrap:wrap}
+.go{align-self:flex-end;background:var(--accent);color:#02101f;font-weight:600;border-radius:6px;padding:6px 12px}
+.prg{height:6px;border-radius:3px;background:rgba(63,169,255,.1);overflow:hidden}
+.prg em{display:block;height:100%;background:var(--ok)}
+.note{color:var(--muted);font-size:10.5px}
+
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:40px;padding-block:56px}
   .nav nav{display:none}
@@ -293,14 +349,44 @@ const P=[
  {c:"dados",cat:"Dados",cl:"Klava · estoque",t:"Conciliação de estoque",p:"Explica a variação mensal do valor de estoque entre julho e setembro.",r:"Erro de custo em 211 SKUs corrigido; alta de agosto ajustada de R$ 308 mil para R$ 99 mil.",s:["Python","Excel"]},
  {c:"ctrl",cat:"Controladoria",cl:"Q9 · Quadra 9",t:"Plano do primeiro drop",p:"Plano de negócio da camisaria da qual sou sócio: coleções, identidade e benchmark de custos.",r:"Custo de R$ 39,50 por peça no cenário base para 1.000 camisetas.",s:["Benchmark","BPO"]}
 ];
+/* ---------- Telas de exemplo (dados fictícios) ---------- */
+const ch=(t,c)=>`<span class="c ${c}">${t}</span>`, OK=ch('OK','ok'), V='<span class="ok">✓</span>';
+const K=a=>`<div class="mk">${a.map(([l,v,c])=>`<div><small>${l}</small><b class="${c||''}">${v}</b></div>`).join('')}</div>`;
+const T=(h,rows)=>`<table class="mt"><thead><tr>${h.map((x,i)=>`<th${i?' class="r"':''}>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>{const tot=r[0]&&r[0].startsWith('=');return `<tr${tot?' class="tot"':''}>${r.map((x,i)=>`<td${i?' class="r"':''}>${i===0&&tot?x.slice(1):x}</td>`).join('')}</tr>`}).join('')}</tbody></table>`;
+const B=(rows,max)=>`<div class="mb">${rows.map(([l,v,d,c])=>`<div class="br"><span>${l}</span><i><em class="${c||''}" style="left:0;width:${v/max*100}%"></em></i><b>${d}</b></div>`).join('')}</div>`;
+const W=(rows,max)=>`<div class="mb">${rows.map(([l,a,b,d,c])=>`<div class="br"><span>${l}</span><i><em class="${c||''}" style="left:${Math.min(a,b)/max*100}%;width:${Math.abs(b-a)/max*100}%"></em></i><b class="${c||''}">${d}</b></div>`).join('')}</div>`;
+const C=(vals,labels)=>{const m=Math.max(...vals);return `<div class="cc">${vals.map((v,i)=>`<div><em style="height:${v/m*88}%"></em><span>${labels[i]}</span></div>`).join('')}</div>`};
+const M=[
+ ['conciliador-361 · agenda',K([['Vendido','R$ 182,4k'],['Liquidado','R$ 141,9k','ok'],['Divergências','7','warn']])+T(['Pedido','Adquirente','Previsto','Status'],[['#10482','Pagar.me','389,90',OK],['#10483','Appmax','214,50',OK],['#10487','Pagar.me','129,90',ch('Taxa ≠','warn')],['#10491','Appmax','599,00',ch('Chargeback','bad')],['#10495','Pagar.me','89,90',ch('D+30','mute')],['#10498','Appmax','249,90',OK]])],
+ ['conciliador-meli · painel',K([['GMV','R$ 96,3k'],['Recebido','R$ 81,7k','ok'],['A conferir','12','warn']])+T(['Venda','Total','Liberado','Status'],[['2000081','149,90','131,22',OK],['2000094','289,00','252,10',OK],['2000102','79,90','—',ch('NOP','mute')],['2000117','189,90','160,40',ch('Cupom','warn')],['2000125','349,00','—',ch('D+15','mute')],['2000131','119,90','104,75',OK]])],
+ ['DRE operacional · online · set',T(['Linha','Set','% RL'],[['Receita bruta','612,4k','148%'],['(−) Impostos e devoluções','198,7k','48%'],['=Receita líquida','413,7k','100%'],['(−) CMV','107,6k','26%'],['=Margem bruta','306,1k','74%'],['(−) Taxas e logística','109,2k','26%'],['(−) Marketing','158,9k','38%'],['=Margem de contribuição','38,0k','9,2%']])],
+ ['klava financeiro · inadimplência',K([['Em aberto','R$ 1,24 mi'],['Vencido','R$ 86,3k','warn'],['Lembretes','23','ok']])+B([['1–30 dias',41.2,'41,2k'],['31–60 dias',22.5,'22,5k','warn'],['61–90 dias',13.1,'13,1k','warn'],['+90 dias',9.5,'9,5k','bad']],45)+'<div class="note">Bling sincronizado hoje às 04:00 <span class="ok">✓</span> · 23 e-mails de cobrança enviados</div>'],
+ ['BI klava comercial',K([['Faturado','R$ 3,8 mi'],['Pares','41,2k'],['Ticket','R$ 92']])+C([210,260,240,310,380,420,395,440,470,505],['J','F','M','A','M','J','J','A','S','O'])+'<div class="note">Faturamento mensal 2026 · atacado + e-commerce</div>'],
+ ['intranet · tarefas','<div class="kb"><div><h4>A fazer</h4><p>Relatório de reps<small>seg · Sales Ops</small></p><p>Royalties Live<small>05/11</small></p></div><div><h4>Andamento</h4><p>Migração OMIE<small><span class="warn">alta</span> · 12/11</small></p><p>Pedido 3º drop<small>Comex</small></p></div><div><h4>Feito</h4><p>DRE Atacado<small class="ok">✓ concluída</small></p><p>Treino BKO<small class="ok">✓ concluída</small></p></div></div><div class="note">#comercial · Ana: subiu a base de setembro 👍</div>'],
+ ['private label · pedidos',T(['Cliente','Pedido','Venda','Margem'],[['ALFA TRADING','PL-031','US$ 48,2k','18,4%'],['NORTE IMPORT','PL-034','US$ 22,9k','12,1%'],['BLUE COAST','PL-036','US$ 61,0k',ch('sem custo','warn')],['ANDES GROUP','PL-038','US$ 17,5k','21,7%'],['ALFA TRADING','PL-040','US$ 35,1k','16,9%']])+'<div class="note"><span style="color:#5aa0ff">Recebido US$ 142,3k</span> · <span class="bad">Pago US$ 98,6k</span> · 14 documentos</div>'],
+ ['top burguer · caixa do dia',K([['Pedidos','86'],['Faturado','R$ 4.312'],['Ticket','R$ 50,14']])+T(['Forma','Esperado','Contado'],[['Dinheiro','612,00','<span class="warn">610,00</span>'],['Pix','1.488,40','1.488,40'],['Cartão','1.911,60','1.911,60'],['iFood','300,00','300,00'],['=Diferença','','<span class="warn">−2,00</span>']])],
+ ['rematrícula 2027','<div class="stp"><span class="d">1 Dados ✓</span><span class="d">2 Família ✓</span><span class="a">3 Atividades</span><span>4 Envio</span></div><div class="fld"><span>Aluno</span><b>Ana Souza</b><span>Segmento</span><b>Fundamental I</b><span>Atividades</span><b>'+ch('Judô','ok')+ch('Robótica','ok')+'</b><span>Turno</span><b>Integral</b></div><span class="go">Salvar e continuar</span>'],
+ ['conciliação itaú · escola',T(['Data','Histórico','Valor','Categoria'],[['02/10','PIX REC','+1.850,00',ch('Mensalidade','ok')],['03/10','TED FORNEC','−4.120,00',ch('Material','mute')],['05/10','TAR PACOTE','−89,90',ch('Tarifas','mute')],['07/10','PIX REC','+1.850,00',ch('Mensalidade','ok')],['08/10','PAG BOLETO','−2.300,00',ch('Classificar','warn')]])+'<div class="prg"><em style="width:96%"></em></div><div class="note">182 de 190 lançamentos classificados</div>'],
+ ['ranking de representantes',B([['Rep 104',284,'284k'],['Rep 131',251,'251k'],['Rep 138',196,'196k'],['Rep 112',154,'154k'],['Rep 120',121,'121k'],['Rep 107',88,'88k']],290)+'<div class="note">Valor faturado no mês · 6 de 12 representantes</div>'],
+ ['conferência por NF',T(['NF','Itens','Total','Confere'],[['113.861','48','R$ 312,4k',V],['113.864','62','R$ 401,9k',V],['94.643','37','R$ 188,2k',ch('R$ 0,01','warn')],['113.867','26','R$ 744,4k',V],['90.556','12','R$ 43,8k',V],['113.870','41','R$ 276,0k',V]])],
+ ['ponte de estoque · jul → ago',W([['Julho',0,2139,'2.139k'],['Entradas',2139,2551,'+412k','ok'],['Saídas',2551,2238,'−313k','bad'],['Erro de custo',2238,2447,'+209k','warn'],['Agosto',0,2447,'2.447k']],2600)+'<div class="note">Variação real: <span class="ok">+99k</span> · erro de custo em 211 SKUs</div>'],
+ ['custo por peça · drop 01',B([['Camiseta lisa',19.9,'19,90'],['Estampa DTF',11.2,'11,20'],['Embalagem e tag',4.6,'4,60'],['Prensa e energia',2.1,'2,10'],['Frete',1.7,'1,70']],20)+T(['Cenário base','','R$/peça'],[['=Total · 1.000 peças','','39,50']])]
+];
 const g=document.getElementById('grid');
 const esc=s=>s.replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
 function render(f){
-  g.innerHTML=P.filter(x=>f==='all'||x.c===f).map(x=>`<article class="card">
+  g.innerHTML=P.map((x,i)=>({...x,i})).filter(x=>f==='all'||x.c===f).map(x=>`<article class="card">
     <div class="meta"><span class="cat">${esc(x.cat)}</span><span class="client">${esc(x.cl)}</span></div>
     <h3>${esc(x.t)}</h3><p>${esc(x.p)}</p><div class="result">${esc(x.r)}</div>
-    <div class="stack">${x.s.map(s=>`<span>${esc(s)}</span>`).join('')}</div></article>`).join('');
+    <div class="stack">${x.s.map(s=>`<span>${esc(s)}</span>`).join('')}</div>
+    <button class="peek" type="button">Ver tela ▸</button>
+    <div class="shot" aria-label="Tela de exemplo: ${esc(x.t)}"><div class="win"><i></i><i></i><i></i><span>${M[x.i][0]}</span><button type="button" class="x" aria-label="Fechar">×</button></div><div class="sb">${M[x.i][1]}</div><div class="fake">Dados fictícios</div></div></article>`).join('');
 }
+g.addEventListener('click',e=>{
+  const c=e.target.closest('.card');if(!c)return;
+  if(e.target.closest('.x')){c.classList.remove('open');return}
+  if(e.target.closest('.peek')){g.querySelectorAll('.card.open').forEach(o=>o!==c&&o.classList.remove('open'));c.classList.add('open')}
+});
 document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.filters button').forEach(o=>o.setAttribute('aria-pressed',o===b?'true':'false'));
   render(b.dataset.f);
